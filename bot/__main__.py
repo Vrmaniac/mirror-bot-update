@@ -44,41 +44,41 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>Commit Date:</b> {last_commit}\n\n'\
-            f'<b>Bot Uptime:</b> {currentTime}\n'\
-            f'<b>OS Uptime:</b> {osUptime}\n\n'\
-            f'<b>Total Disk Space:</b> {total}\n'\
-            f'<b>Used:</b> {used} | <b>Free:</b> {free}\n\n'\
-            f'<b>Upload:</b> {sent}\n'\
-            f'<b>Download:</b> {recv}\n\n'\
-            f'<b>CPU:</b> {cpuUsage}%\n'\
-            f'<b>RAM:</b> {mem_p}%\n'\
-            f'<b>DISK:</b> {disk}%\n\n'\
-            f'<b>Physical Cores:</b> {p_core}\n'\
-            f'<b>Total Cores:</b> {t_core}\n\n'\
-            f'<b>SWAP:</b> {swap_t} | <b>Used:</b> {swap_p}%\n'\
-            f'<b>Memory Total:</b> {mem_t}\n'\
-            f'<b>Memory Free:</b> {mem_a}\n'\
-            f'<b>Memory Used:</b> {mem_u}\n'
+    stats = f'<b> ♻️ Commit Date:</b> {last_commit}\n\n'\
+            f'<b> 🤖 Bot Uptime:</b> {currentTime}\n'\
+            f'<b> ⚒ OS Uptime:</b> {osUptime}\n\n'\
+            f'<b> 📀 Total Disk Space:</b> {total}\n'\
+            f'<b> 💿 Used:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b> ⚡️ Upload:</b> {sent}\n'\
+            f'<b> ⛈ Download:</b> {recv}\n\n'\
+            f'<b> 📱 CPU:</b> {cpuUsage}%\n'\
+            f'<b> 📂 RAM:</b> {mem_p}%\n'\
+            f'<b> 💽 DISK:</b> {disk}%\n\n'\
+            f'<b> 🚀 Physical Cores:</b> {p_core}\n'\
+            f'<b> 🤖 Total Cores:</b> {t_core}\n\n'\
+            f'<b> ⚒ SWAP:</b> {swap_t} | <b> ⚒ Used:</b> {swap_p}%\n'\
+            f'<b> 🛰 Memory Total:</b> {mem_t}\n'\
+            f'<b> 🧩 Memory Free:</b> {mem_a}\n'\
+            f'<b> 🧩 Memory Used:</b> {mem_u}\n'
     sendMessage(stats, context.bot, update.message)
 
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.buildbutton("Report Group", "https://t.me/+PRRzqHd31XY3ZWZk")
+    buttons.buildbutton("Mirror Group 💫", "https://t.me/+imC5GbNVHJczN2Vl")
+    buttons.buildbutton("Owner", "https://t.me/SupergodX")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive!
+Sorry! use this bot in @mrxmirrorzone
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not Authorized user, deploy your own mirror-leech bot', context.bot, update.message, reply_markup)
+        sendMarkup('Not Authorized user, join @mrxmirrorzone', context.bot, update.message, reply_markup)
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting...", context.bot, update.message)
+    restart_message = sendMessage("Restarting...♻️", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
     alive.kill()
@@ -208,9 +208,9 @@ def main():
                 if ospath.isfile(".restartmsg"):
                     with open(".restartmsg") as f:
                         chat_id, msg_id = map(int, f)
-                    msg = 'Restarted successfully!'
+                    msg = 'Restarted successfully! 😉 '
                 else:
-                    msg = 'Bot Restarted!'
+                    msg = 'Bot Restarted! 😉 '
                 for tag, links in data.items():
                      msg += f"\n\n{tag}: "
                      for index, link in enumerate(links, start=1):
