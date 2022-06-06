@@ -48,7 +48,7 @@ def stats(update, context):
             f'<b> 🤖 Bot Uptime:</b> {currentTime}\n'\
             f'<b> ⚒ OS Uptime:</b> {osUptime}\n\n'\
             f'<b> 📀 Total Disk Space:</b> {total}\n'\
-            f'<b> 💿 Used:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b> 💿 Used:</b> {used} | <b> 😁 Free:</b> {free}\n\n'\
             f'<b> ⚡️ Upload:</b> {sent}\n'\
             f'<b> ⛈ Download:</b> {recv}\n\n'\
             f'<b> 📱 CPU:</b> {cpuUsage}%\n'\
@@ -70,12 +70,12 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Sorry! use this bot in @mrxmirrorzone
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Sorry bruh! use this bot in @mrxmirrorzone 🤪
+Type /{BotCommands.HelpCommand} to get a list of available commands 😎
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not Authorized user, join @mrxmirrorzone', context.bot, update.message, reply_markup)
+        sendMarkup('Not Authorized user, join @mrxmirrorzone 😎 ', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...♻️", context.bot, update.message)
