@@ -72,7 +72,6 @@ def start(update, context):
         start_string = f'''
 Sorry bruh! use this bot in @mrxmirrorzone 🤪
 Type /{BotCommands.HelpCommand} to get a list of available commands 😎
-<b>@mrxmirrorzone™️<b>
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
