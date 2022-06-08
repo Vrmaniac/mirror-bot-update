@@ -72,6 +72,7 @@ def start(update, context):
         start_string = f'''
 Sorry bruh! use this bot in @mrxmirrorzone 🤪
 Type /{BotCommands.HelpCommand} to get a list of available commands 😎
+<b>@mrxmirrorzone™️<b>
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
@@ -171,7 +172,7 @@ help_string_telegraph = f'''<br>
 '''
 
 help = telegraph.create_page(
-        title='Mirror-Leech-Bot Help',
+        title='Mr. X Mirror Zone Help',
         content=help_string_telegraph,
     )["path"]
 
