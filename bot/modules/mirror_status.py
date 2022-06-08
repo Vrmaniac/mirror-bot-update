@@ -18,7 +18,7 @@ def mirror_status(update, context):
             message = 'No Active Downloads ☹️ !\n___________________________'
             message += f"\n<b> ⚒ CPU:</b> {cpu_percent()}% | <b> 🔋 FREE:</b> {free}" \
                        f"\n<b> 📍 RAM:</b> {virtual_memory().percent}% | <b> ⏲ UPTIME:</b> {currentTime}"
-                       f"\n<b> @mrxmirrorzone™️"
+                       f"\n<b> Mr. X MIrror Zone™️"
             reply_message = sendMessage(message, context.bot, update.message)
             Thread(target=auto_delete_message, args=(context.bot, update.message, reply_message)).start()
             return
